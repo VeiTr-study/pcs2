@@ -28,7 +28,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Авторизация', style: TextStyle(fontWeight: FontWeight.bold),)),
+        title: const Center(
+          child: Padding(
+            padding: EdgeInsets.only(top: 30.0),
+            child: Text(
+              'Авторизация',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            ),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 100.0),
@@ -36,28 +44,90 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const Padding(
-              padding: const EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
               child: TextField(
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(), hintText: 'Login'),
+                    fillColor: const Color(0xFFF0EFF4),
+                    filled: true,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide.none),
+                    hintText: 'Логин',
+                    hintStyle: const TextStyle(color: Color(0xFF9F9EA3))),
               ),
             ),
-            const Padding(
-              padding: const EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
               child: TextField(
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(), hintText: 'Password'),
+                    fillColor: const Color(0xFFF0EFF4),
+                    filled: true,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide.none),
+                    hintText: 'Пароль',
+                    hintStyle: const TextStyle(color: Color(0xFF9F9EA3))),
               ),
             ),
-            Checkbox(
-              value: false,
-              onChanged: (value) => 0,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Checkbox(value: false, onChanged: null),
+                Text('Запомнить меня',
+                    style: TextStyle(color: Color(0xFF9F9EA3), fontSize: 16))
+              ],
             ),
-            ElevatedButton(onPressed: () {}, child: Text('Войти'), style: TextStyle()),
-            ),),
-            ElevatedButton(onPressed: () {}, child: Text('Регистрация')),
-            Text('Восстановить пароль', )
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF0B6BFE),
+                      textStyle: const TextStyle(color: Colors.white),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5))),
+                  child: const Text(
+                    'Войти',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16.0, left: 16, right: 16),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    textStyle: const TextStyle(color: Color(0xFF357DC1)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                      side:
+                          const BorderSide(color: Color(0xFF357DC1), width: 1),
+                    ),
+                  ),
+                  child: const Text(
+                    'Регистрация',
+                    style: TextStyle(
+                        color: Color(0xFF357DC1),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+            const Text(
+              'Восстановить пароль',
+              style: TextStyle(color: Color(0xFF9F9EA3), fontSize: 16),
+            )
           ],
         ),
       ),

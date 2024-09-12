@@ -2,4 +2,4 @@
 
 ## Мальцев Иван Владимирович ЭФБО-05-22
 
-![image](https://github.com/user-attachments/assets/42757213-a300-4f9d-8ff1-773034860705)
+![Снимок экрана 2024-09-12 074645](https://github.com/user-attachments/assets/9c4b2902-49c6-4851-b34f-0abd9e7051e9)
